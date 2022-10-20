@@ -21,7 +21,9 @@ class UserSerializer(serializers.ModelSerializer):
                 'name', 
                 'english_level', 
                 'technical_skills', 
-                'resume_link'
+                'resume_link',
+                'is_staff',
+                'is_superuser',
             ]
         extra_kwargs = {
             'password' : {
