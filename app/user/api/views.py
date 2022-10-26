@@ -29,3 +29,5 @@ class UserViewSet(viewsets.ModelViewSet):
     queryset = get_user_model().objects.all()
     serializer_class = UserSerializer
     filterset_class = UserFilter
+
+    permission_classes = [permissions.IsAuthenticated]
