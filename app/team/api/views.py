@@ -20,4 +20,4 @@ class TeamViewSet(viewsets.ModelViewSet):
     serializer_class = TeamSerializer
     filterset_class =  TeamFilter
 
-    #permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated]

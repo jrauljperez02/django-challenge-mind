@@ -102,3 +102,6 @@
 2022-10-26 20:39:52,697  ERROR  38  /app/core/api/views.py  <module>  10  Token api  
 2022-10-26 20:39:55,312  ERROR  40  /app/core/api/views.py  <module>  10  Token api  
 2022-10-26 20:40:06,363  ERROR  44  /app/core/api/views.py  <module>  10  Token api  
+2022-10-26 20:42:44,385  ERROR  1  /app/core/api/views.py  <module>  10  Token api  
+2022-10-26 20:47:18,046  ERROR  1  /app/core/api/views.py  <module>  10  Token api  
+2022-10-26 20:48:14,630  ERROR  48  /app/core/api/views.py  <module>  10  Token api  

@@ -53,8 +53,6 @@ class PublicAccountAPITests(TestCase):
         self.assertEqual(res.status_code, status.HTTP_401_UNAUTHORIZED)
 
 
-
-
 class PrivateAccountApiTests(TestCase):
     """Test authenticated API requests."""
 
