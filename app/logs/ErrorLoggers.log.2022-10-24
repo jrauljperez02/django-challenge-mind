@@ -1,0 +1,12 @@
+2022-10-24 16:05:21,154  ERROR  7  /app/core/api/views.py  <module>  10  Token api  
+2022-10-24 16:49:34,985  ERROR  1  /app/core/api/views.py  <module>  10  Token api  
+2022-10-24 16:49:45,159  ERROR  1  /app/core/api/views.py  <module>  10  Token api  
+2022-10-24 16:49:57,450  ERROR  1  /app/core/api/views.py  <module>  10  Token api  
+2022-10-24 16:50:23,956  ERROR  6  /app/core/api/views.py  <module>  10  Token api  
+2022-10-24 16:56:31,122  ERROR  7  /app/core/api/views.py  <module>  10  Token api  
+2022-10-24 17:48:43,624  ERROR  7  /app/core/api/views.py  <module>  10  Token api  
+2022-10-24 18:00:39,722  ERROR  7  /app/core/api/views.py  <module>  10  Token api  
+2022-10-24 22:15:08,675  ERROR  1  /app/core/api/views.py  <module>  10  Token api  
+2022-10-24 22:15:16,301  ERROR  1  /app/core/api/views.py  <module>  10  Token api  
+2022-10-24 22:15:24,539  ERROR  1  /app/core/api/views.py  <module>  10  Token api  
+2022-10-24 22:15:48,165  ERROR  7  /app/core/api/views.py  <module>  10  Token api  

@@ -8,6 +8,8 @@ from rest_framework import generics, authentication, permissions
 from rest_framework import viewsets
 from user.api.serializers import UserSerializer
 
+from django_filters import rest_framework as filters
+
 class ManageUserView(generics.RetrieveAPIView):
     """Manage the authenticated user"""
     serializer_class = UserSerializer
@@ -16,15 +18,14 @@ class ManageUserView(generics.RetrieveAPIView):
     def get_object(self):
         """Retrieve and return the authenticated user. """
         return self.request.user
-
-@extend_schema_view(
-    list = extend_schema(description = 'Allow obtain a list of users'),
-    retrieve = extend_schema(description = 'Allow obtain a user'),
-    create = extend_schema(description = 'Allow create a new user'),
-    update = extend_schema(description = 'Allow update an existing user'),
-    destroy = extend_schema(description = 'Allow delete an existing user'),
-)
+        
+class UserFilter(filters.FilterSet):
+    class Meta:
+        model = get_user_model()
+        fields = {
+            'name' : ['icontains']
+        }
 class UserViewSet(viewsets.ModelViewSet):
-    serializer_class = UserSerializer
     queryset = get_user_model().objects.all()
-    permission_classes = [permissions.IsAuthenticated]
+    serializer_class = UserSerializer
+    filterset_class = UserFilter

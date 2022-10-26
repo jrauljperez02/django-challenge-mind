@@ -64,3 +64,13 @@ class Account(models.Model):
 
     def __str__(self):
         return self.account_name
+
+
+#TODO: Develop unit test for Team model
+class Team(models.Model):
+    """Team object in the system."""
+    team_name = models.CharField(max_length=255)
+    developers = models.ManyToManyField(User)
+
+    def __str__(self):
+        return self.team_name

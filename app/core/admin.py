@@ -49,3 +49,4 @@ class UserAdmin(BaseUserAdmin):
 
 admin.site.register(models.User, UserAdmin)
 admin.site.register(models.Account)
+admin.site.register(models.Team)
