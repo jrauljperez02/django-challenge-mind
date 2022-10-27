@@ -18,6 +18,6 @@ class AccountSerializer(serializers.ModelSerializer):
             'account_name', 
             'account_customer', 
             'operational_responsable',
-            'team_consult'
+            'team_id'
         ]
         read_only_fields = ['id']

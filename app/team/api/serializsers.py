@@ -16,6 +16,6 @@ class TeamSerializer(serializers.ModelSerializer):
         fields = [
             'id',
             'team_name',
-            'developers'
+            'coworkers'
         ]
         read_only_fields = ['id']

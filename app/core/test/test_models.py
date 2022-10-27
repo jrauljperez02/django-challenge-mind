@@ -3,7 +3,6 @@ Tests for models.
 """
 from django.test import TestCase
 from django.contrib.auth import get_user_model
-
 from core import models
 
 class ModelTests(TestCase):
@@ -56,11 +55,13 @@ class ModelTests(TestCase):
             email=email,
             password=password,
         )
+        team = models.Team.objects.create(
+            team_name = 'Sample Test Name'
+        )
         account = models.Account.objects.create(
-            user = user,
             account_name = 'Sample account_name',
             account_customer = 'Sample account_customer',
-            operational_responsable = ' Sample operational_responsable',
-            team_consult = ' Sample team_consult'
+            operational_responsable = user,
+            team_id = team
         )
         self.assertEqual(str(account), account.account_name)

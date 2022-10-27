@@ -54,23 +54,23 @@ class User(AbstractBaseUser, PermissionsMixin):
     USERNAME_FIELD = 'email'
 
 
-class Account(models.Model):
-    """Account object in the system."""
-    user = models.ForeignKey(User, on_delete = models.CASCADE, null = True)
-    account_name = models.CharField(max_length=255)
-    account_customer = models.CharField(max_length=255)
-    operational_responsable = models.CharField(max_length=255)
-    team_consult = models.CharField(max_length=255)
-
-    def __str__(self):
-        return self.account_name
 
 
 #TODO: Develop unit test for Team model
 class Team(models.Model):
     """Team object in the system."""
     team_name = models.CharField(max_length=255)
-    developers = models.ManyToManyField(User)
+    coworkers = models.ManyToManyField(User)
 
     def __str__(self):
         return self.team_name
+
+class Account(models.Model):
+    """Account object in the system."""
+    account_name = models.CharField(max_length=255)
+    account_customer = models.CharField(max_length=255)
+    operational_responsable = models.ForeignKey(User, on_delete = models.CASCADE, null = True)
+    team_id = models.ForeignKey(Team, on_delete = models.CASCADE, null = True)
+
+    def __str__(self):
+        return self.account_name
