@@ -1,14 +1,15 @@
-from django.urls import include, path
-from rest_framework import routers
+"""
+URL mappings for the user API.
+"""
+from django.urls import path
 
-from user.api.views import UserViewSet
+from user.api import views
 
-
-router = routers.DefaultRouter()
-router.register('', UserViewSet)
 
 app_name = 'user'
 
 urlpatterns = [
-    path('', include(router.urls)),
+    path('create/', views.CreateUserView.as_view(), name='create'),
+    # path('token/', views.CreateTokenView.as_view(), name='token'),
+    # path('me/', views.ManageUserView.as_view(), name='me'),
 ]
