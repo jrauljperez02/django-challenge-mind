@@ -14,10 +14,14 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
         token = super().get_token(user)
 
         # Add custom claims
+        token['name'] = user.name
         token['email'] = user.email
+        token['english_level'] = user.english_level
+        token['technical_skills'] = user.technical_skills
+        token['resume_link'] = user.resume_link
         token['is_staff'] = user.is_staff
         token['is_superuser'] = user.is_superuser
-        token['name'] = user.name
+        
 
         # ...
 
