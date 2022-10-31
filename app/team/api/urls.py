@@ -5,7 +5,7 @@ from team.api.views import TeamViewSet
 
 
 router = routers.DefaultRouter()
-router.register('', TeamViewSet)
+router.register('teams', TeamViewSet)
 
 app_name = 'team'
 

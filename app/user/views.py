@@ -6,18 +6,10 @@ from django.contrib.auth import get_user_model
 
 from rest_framework import generics, authentication, permissions
 from rest_framework import viewsets
-from user.api.serializers import UserSerializer
+from user.serializers import UserSerializer
 
 from django_filters import rest_framework as filters
 
-# class ManageUserView(generics.RetrieveAPIView):
-#     """Manage the authenticated user"""
-#     serializer_class = UserSerializer
-#     permission_classes = [permissions.IsAuthenticated]
-
-#     def get_object(self):
-#         """Retrieve and return the authenticated user. """
-#         return self.request.user
         
 class UserFilter(filters.FilterSet):
     class Meta:
