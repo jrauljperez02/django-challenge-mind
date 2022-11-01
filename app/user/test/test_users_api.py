@@ -12,6 +12,11 @@ from rest_framework import status
 
 USER_URL = reverse('user:user-list')
 
+
+def create_user(**params):
+    """Create and return a new user"""
+    return get_user_model().objects.create_user()
+
 class PublicUsersAPITests(TestCase):
     """Test unauthenticated API requests."""
 
@@ -25,9 +30,19 @@ class PublicUsersAPITests(TestCase):
         self.assertEqual(res.status_code, status.HTTP_401_UNAUTHORIZED)
 
 
+class PrivateUserAPITests(TestCase):
+    """Test authenticated API requests"""
+
+    def setUp(self):
+        self.user = create_user(email = 'test@example.com', password = 'testpassword123')
+        self.client = APIClient()
+        self.client.force_authenticate(self.user)
+
+    
 
 
-# def create_user(**params):
+
+# def create_user(**params):123741231234567980-2356234
 #     """Create and return a new user"""
 #     return get_user_model().objects.create_user(**params)
 
