@@ -49,19 +49,22 @@ class ModelTests(TestCase):
     
     def test_create_account_object(self):
         """Test creating an account object."""
-        email = 'test@example.com'
-        password = 'testpass123'
-        user = get_user_model().objects.create_user(
-            email=email,
-            password=password,
-        )
-        team = models.Team.objects.create(
-            team_name = 'Sample Test Name'
-        )
         account = models.Account.objects.create(
             account_name = 'Sample account_name',
             account_customer = 'Sample account_customer',
-            operational_responsable = user,
-            team_id = team
+            operational_responsable = get_user_model().objects.create_user(
+                email = 'email@example.com',
+                password = 'testpassword123'
+            ),
+            team_id = models.Team.objects.create(
+                team_name = 'Smaple Team Name'
+            )
         )
         self.assertEqual(str(account), account.account_name)
+
+    def test_create_team_object(self):
+        """Test creating a team object"""
+        team = models.Team.objects.create(
+            team_name = 'Sample team name',
+        )
+        self.assertEqual(str(team), team.team_name)

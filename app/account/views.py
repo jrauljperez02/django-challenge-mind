@@ -20,6 +20,6 @@ class AccountViewSet(viewsets.ModelViewSet):
 
     serializer_class = serializers.AccountSerializer
     queryset = Account.objects.all().order_by('-id')
-    #permission_classes = [IsAuthenticated]
+    permission_classes = [IsAuthenticated]
 
     filterset_class = AccountFilter

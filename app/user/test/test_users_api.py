@@ -1,16 +1,30 @@
-# """
-# Tests for the user API
-# """
+"""
+Tests for the user API
+"""
 
-# from django.test import TestCase
-# from django.contrib.auth import get_user_model
-# from django.urls import reverse
+from django.test import TestCase
+from django.contrib.auth import get_user_model
+from django.urls import reverse
 
-# from rest_framework.test import APIClient
-# from rest_framework import status
+from rest_framework.test import APIClient
+from rest_framework import status
 
 
-# ME_URL = reverse('user:')
+USER_URL = reverse('user:user-list')
+
+class PublicUsersAPITests(TestCase):
+    """Test unauthenticated API requests."""
+
+    def setUp(self):
+        self.client = APIClient()
+
+    def test_auth_required(self):
+        """Test auth is required to call API."""
+        res = self.client.get(USER_URL)
+
+        self.assertEqual(res.status_code, status.HTTP_401_UNAUTHORIZED)
+
+
 
 
 # def create_user(**params):
